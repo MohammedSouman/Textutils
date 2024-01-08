@@ -47,8 +47,8 @@ export default function TextForm(props) {
         <button disabled={text.length === 0} className={`btn btn-primary m-2 bg-${props.mode.bgColor} border-dark border-2 text-${props.mode.textColor}`} onClick={removeExtraSpaces}>Remove extra spaces</button>
         <div className="container my-3">
             <h2>Text Summary</h2> 
-            <p>{text.split(" ").filter((t) => {return t.length>0}).length} words {text.length} characters</p>
-            <p>{text.split(" ").filter((t) => {return t.length>0}).length * 0.008} Minutes to read</p>
+            <p>{text.split(/\s+/).filter((t) => {return t.length>0}).length} words {text.length} characters</p>
+            <p>{text.split(/\s+/).filter((t) => {return t.length>0}).length * 0.008} Minutes to read</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Nothing to preview"}</p>
         </div>
